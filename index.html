@@ -870,6 +870,19 @@ footer b{color:#c9c9d6}
 @media(hover:none){.bdg-card{touch-action:pan-x pan-y;cursor:pointer}}
 .fan-stage{touch-action:pan-y}
 
+/* ===== 구형 브라우저(색 혼합 color-mix 미지원: iOS 16.1 이하 등) 대체 스타일 ===== */
+@supports not (color:color-mix(in srgb,red 50%,blue)){
+  .ch-sec{background:var(--tone,#07070c)!important}
+  .ch-wm{-webkit-text-stroke:1.5px rgba(255,255,255,.08)}
+  .ch-n{border-color:var(--acc);background:rgba(255,255,255,.04)}
+  .ch-q::before{background:var(--acc)}
+  .fc-vis{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,0) 60%),#13131e}
+  .fc-sub b{background:none;color:#fff;-webkit-text-fill-color:#fff}
+  .fan.spread .fc:hover .fc-in{border-color:var(--a)}
+  .bdg-strap{background:var(--a)}
+  .bdg-f,.bdg-b{background:linear-gradient(180deg,var(--a) -70%,#12121c 36%,#0c0c13 100%);border-color:rgba(255,255,255,.16)}
+}
+
 @media(prefers-reduced-motion:reduce){.fc,.fc-in{transition-duration:.01s!important}.fc-in::before{animation:none}}
 </style>
 </head>
